@@ -1,12 +1,11 @@
 // AiCRO 기준 Setting의 DVS에서 사용할 수 있으며, 적용하고자 할 때 OID값을 확인하여야 한다.
 
-
 // 입력 날짜가 YYYY-MM-DD 형식이 아니면 메세지 출력  2022-10-25  
 // Date기능을 사용할 OID값 마다 각각 따로 사용하여야 한다.  즉, DTF 내 Date 기능이 3개라면 OID값을 변경하여 3번 사용 
 var message =""; 
 var trueFalse = false;
 date=ITEM.getValue("DTF_SCANDTC_CT")  
-const date_Check = /\d{4}-\d{2}-\d{2}/;  // 정규표현식  const는 최초 1회만 사용할 것
+const date_Check = /\d{4}-\d{2}-\d{2}/;  // 정규표현식    const는 최초 1회만 사용할 것
 if((ITEM.getValue("DTF_SCANDTC_CT") === null) && megic.isNull(ITEM.getValue("DTF_SCANDTC_CT"))) {
     var message = "날짜 미기재";
     
@@ -39,7 +38,7 @@ if(ITEM.getValue("R_NEWLIND")!=="Yes") {    // Lesion Indicator의 OID값 확인
         }
     }
     // ITEM.setValue(null,"");
-}
+} 
 // // Indicator NO -> All Change Null 검증하는 코드
 // else{
 //     let resetList=["R_NEWLOC_","R_NEWLOCOT_","R_NEWLOCSITE_","R_NEWLOCSITE_MUL_","R_NEWLDL_SE","R_NEWLDL_IM","R_NEWLMET_","R_NEWLMETOT_","R_NLIMG_","R_NLDTC_","R_NEWCMT_"];
@@ -159,6 +158,7 @@ function parse(str) {
 
 var w_date = ITEM.getValue('DTF_SCANDTC_CT_CHEST',0,'DTF',0,'DTF');
 var w_date3 = null;
+
 if(w_date !== null) {
     var w_date1 = w_date.replace("-","");
     var w_date2 = w_date1.replace("-","");
